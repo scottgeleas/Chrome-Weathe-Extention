@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <link rel="stylesheet" type="text/css" href="css/popup.css">
-</head>
-<body>
-    <h1>Search for a city</h1>
-    <form>
-        <label for="city">City:</label>
-        <input name='city'type="text">
-        <label for="state">State:</label>
-        <input name='state'type="text">
-    </form>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" type="text/css" href="./css/popup.css" /> -->
+    <title>Quick Weather</title>
+    </head>
+    <body>
+        <h1>Search for a city</h1>
+        <form>
+            <label for="city">City:</label>
+            <input name="city" type="text" />
+            <label for="state">State:</label>
+            <input name="state" type="text" />
+        </form>
 
-    <div>
-        <h2>Weather for: <span id="location"></span></h2>
-        <!-- current temp -->
-        <!-- humidity -->
-        <!-- uv index -->
-        <!-- description -->
-        <!-- wind speed -->
-        <p id="temp"></p>
-        <p id="humidity"></p>
-        <p id="uv"></p>
-        <p id="description"></p>
-        <p id="wind"></p>
-    </div>
-</body>
+        <div>
+            <div class="location">
+                <h2>Weather for: <span id="location"></span></h2>
+            </div>
+            <!-- icon-->
+            <img id="icon" />
+            <!-- current temp -->
+            <div class="temp">
+                <span id="temp"></span>
+            </div>
+            <!-- description -->
+            <div class="description">
+                <span id="description"></span>
+
+            </div>
+            <!-- humidity -->
+            <div class="humidty">
+                <span id="humidity"></span>
+
+            </div>
+            <!-- wind speed -->
+            <div class="wind">
+                <span id="wind"></span>
+
+            </div>
+        </div>
+        <script src="./fetchWeather.js"></script>
+    </body>
 </html>
