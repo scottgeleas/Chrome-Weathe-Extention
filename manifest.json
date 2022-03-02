@@ -1,5 +1,5 @@
 {
-    "name": "Quick Weather",
+    "name": "Simple Weather",
     "version": "1.0.0",
     "description": "A simple Chrome extension that allows you to easily check the weather in a specified city.",
     "browser_action": {
