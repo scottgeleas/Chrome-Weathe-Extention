@@ -5,9 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="./assets/css/popup.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap"
+            rel="stylesheet"
+        />
         <title>Simple Weather</title>
     </head>
     <body>
@@ -18,7 +21,7 @@
             </header>
             <section id="search">
                 <h2>Enter a city to check the weather</h2>
-                <form>
+                <form autocomplete="on">
                     <section id="inputs">
                         <article>
                             <label for="city">City: </label>
@@ -27,8 +30,10 @@
                                 name="city"
                                 type="text"
                                 placeholder=" Boston"
+                                required
                             />
                         </article>
+
                         <article>
                             <label for="state">State: </label>
                             <input
@@ -36,12 +41,15 @@
                                 name="state"
                                 type="text"
                                 placeholder=" Massachusetts"
+                                required
                             />
                         </article>
                     </section>
+
                     <button>Search</button>
                 </form>
             </section>
+
             <section id="information" class="hide">
                 <article class="location">
                     <h2>
@@ -73,6 +81,8 @@
                     <p id="wind"></p>
                 </article>
             </section>
+
+            <h3 id="error" class="hide">Error</h3>
         </main>
         <footer>
             <a
