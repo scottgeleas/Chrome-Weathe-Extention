@@ -2,7 +2,9 @@ body {
     width: 300px;
 }
 
-h1, h2 {
+h1,
+h2,
+h3 {
     text-align: center;
 }
 
@@ -26,6 +28,12 @@ button {
     text-align: center;
 }
 
-.hide {
-    display: none;
+p {
+    font-size: larger;
+}
+
+.icon,
+.description {
+    display: flex;
+    justify-content: center;
 }

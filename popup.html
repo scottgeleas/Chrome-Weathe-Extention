@@ -14,44 +14,61 @@
                 <h2>Search for a city</h2>
                 <form>
                     <section id="inputs">
-                        <section>
+                        <article>
                             <label for="city">City: </label>
-                             <input id="city-input" name="city" type="text" placeholder=" Boston"/>
-                        </section>
-                        <section>
+                            <input
+                                id="city-input"
+                                name="city"
+                                type="text"
+                                placeholder=" Boston"
+                            />
+                        </article>
+                        <article>
                             <label for="state">State: </label>
-                            <input id="state-input" name="state" type="text" placeholder=" Massachusetts" />
-                        </section>
+                            <input
+                                id="state-input"
+                                name="state"
+                                type="text"
+                                placeholder=" Massachusetts"
+                            />
+                        </article>
                     </section>
                     <button>Search</button>
                 </form>
             </section>
-            <article id="information">
-            
+            <section id="information">
                 <article class="location">
-                    <h2>Current Weather for Boston<span id="location"></span></h2>
+                    <h3>
+                        <span id="city"></span>
+                    </h3>
                 </article>
-                
-                <img id="icon" />
+
+                <article class="icon">
+                    <img id="icon" />
+                </article>
 
                 <article class="description">
                     <p id="description"></p>
                 </article>
-        
+
                 <article class="temp">
                     <p id="temp"></p>
                 </article>
-              
-                <article class="humidty">
-                    <p id="humidity"></p>
+
+                <article class="min-temp">
+                    <p id="min-temp"></p>
                 </article>
-              
+
+                <article class="max-temp">
+                    <p id="max-temp"></p>
+                </article>
+
                 <article class="wind">
                     <p id="wind"></p>
                 </article>
-            </article>
+            </section>
         </main>
-        <script  src="./assets/js/stateCodes.js"></script>
+        <script src="./assets/js/stateCodes.js"></script>
         <script src="./assets/js/fetchWeather.js"></script>
     </body>
 </html>
