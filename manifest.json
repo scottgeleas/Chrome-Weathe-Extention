@@ -2,8 +2,15 @@
     "name": "Simple Weather",
     "version": "1.0.0",
     "description": "A simple Chrome extension that allows you to easily check the weather in a specified city.",
+    "manifest_version": 2,
     "browser_action": {
-        "default_popup": "./popup.html"
+        "default_popup": "./popup.html",
+        "default_icon": "./assets/images/weather128.png"
     },
-    "manifest_version": 2
+    "icons": {
+        "16": "./assets/images/weather16.png",
+        "48": "./assets/images/weather64.png",
+        "128": "./assets/images/weather128.png"
+    },
+    "permissions": ["activeTab"]
 }
