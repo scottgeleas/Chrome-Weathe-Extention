@@ -2,8 +2,9 @@ const apiKey = '6aab536680d25358aa622219c8452f38';
 const form = document.querySelector('form');
 const cityInput = document.getElementById('city-input');
 const stateInput = document.getElementById('state-input');
+const informationEl = document.getElementById('information')
 const city = document.getElementById('city');
-const iconEl = document.querySelector('img');
+const iconEl = document.getElementById('icon');
 const descriptionEl = document.getElementById('description');
 const tempEl = document.getElementById('temp');
 const maxEl = document.getElementById('max-temp');
@@ -67,6 +68,9 @@ async function renderWeather(e) {
         const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
         const weather = await getWeather(weatherUrl);
 
+        //if successful show the information section
+        informationEl.removeAttribute('class')
+
         //picking info off of the weather object and adding that text to the html
         iconEl.setAttribute(
             'src',
@@ -77,7 +81,6 @@ async function renderWeather(e) {
         minEl.textContent = `Low: ${weather.main.temp_min}°F`;
         maxEl.textContent = `High: ${weather.main.temp_max}°F`;
         windEl.textContent = `Wind Speed: ${weather.wind.speed}mph`;
-        
     } catch (err) {
         console.log(err);
     }

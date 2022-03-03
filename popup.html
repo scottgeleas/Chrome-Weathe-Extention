@@ -5,13 +5,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="./assets/css/popup.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
         <title>Simple Weather</title>
     </head>
     <body>
         <main>
-            <h1>Simple Weather</h1>
+            <header>
+                <img src="assets/images/weather64.png" />
+                <h1>Simple Weather</h1>
+            </header>
             <section id="search">
-                <h2>Search for a city</h2>
+                <h2>Enter a city to check the weather</h2>
                 <form>
                     <section id="inputs">
                         <article>
@@ -36,11 +42,11 @@
                     <button>Search</button>
                 </form>
             </section>
-            <section id="information">
+            <section id="information" class="hide">
                 <article class="location">
-                    <h3>
+                    <h2>
                         <span id="city"></span>
-                    </h3>
+                    </h2>
                 </article>
 
                 <article class="icon">
@@ -69,7 +75,11 @@
             </section>
         </main>
         <footer>
-            <a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icon created by iconixar - Flaticon</a>
+            <a
+                href="https://www.flaticon.com/free-icons/weather"
+                title="weather icons"
+                >Weather icon created by iconixar - Flaticon</a
+            >
         </footer>
         <script src="./assets/js/stateCodes.js"></script>
         <script src="./assets/js/fetchWeather.js"></script>

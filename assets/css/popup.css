@@ -1,5 +1,13 @@
 body {
+    font-family: 'Fredoka', sans-serif;
     width: 300px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 h1,
@@ -18,18 +26,57 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 3px;
 }
 form input {
-    padding: 4px 6px;
+    padding: 6px 10px;
     margin-bottom: 3px;
+    border-radius: 25px;
+}
+
+label {
+    font-size: larger;
 }
 
 button {
     text-align: center;
+    font-size: larger;
+    margin: 3px 0;
+    padding: 10px 20px;
+    background-color: rgb(84, 175, 254);
+    color: white;
+    border: 2px solid rgb(16, 142, 252);
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: rgb(84, 175, 254);
+    border: 2px solid black;
+}
+
+.hide {
+    display: none;
+}
+
+#information {
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: rgb(84, 175, 254);
+    box-shadow: 3px 5px 2px rgb(120, 120, 120);
+    margin-bottom: 7px;
+    color: rgb(255, 255, 255);
+}
+
+#information h2, p {
+    text-shadow: 1px 1px #000000;
 }
 
 p {
     font-size: larger;
+    text-align: center;
+    line-height: 50%;
 }
 
 .icon,
@@ -40,4 +87,13 @@ p {
 
 footer {
     text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: gray;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
