@@ -68,7 +68,9 @@ async function renderWeather(e) {
         const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
         const weather = await getWeather(weatherUrl);
 
-        //if successful show the information section
+        //if successful claer inputs and show the information section
+        cityInput.value = ""
+        stateInput.value = ""
         informationEl.removeAttribute('class')
 
         //picking info off of the weather object and adding that text to the html
