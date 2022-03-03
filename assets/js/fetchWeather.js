@@ -55,6 +55,9 @@ function capitalize(description) {
 async function renderWeather(e) {
     e.preventDefault();
     try {
+        // hide previous search information if searching again
+        informationEl.setAttribute('class', 'hide');
+
         const cityName = cityInput.value.toLowerCase().trim();
         // state turns whatever they typed in into a string with no uppercase and no spaces
         const state = stateInput.value.toLowerCase().trim().split(' ').join('');
@@ -68,6 +71,8 @@ async function renderWeather(e) {
         const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
         const weather = await getWeather(weatherUrl);
 
+        // if user's search fails and they try again this clears the errorEl before showing information
+        errorEl.textContent = '';
         //if successful clear inputs and show the information section
         cityInput.value = '';
         stateInput.value = '';
@@ -85,7 +90,8 @@ async function renderWeather(e) {
         windEl.textContent = `Wind Speed: ${weather.wind.speed}mph`;
     } catch (err) {
         console.log(err);
-        errorEl.textContent = 'Unable to find that city. Please try again.';
+        errorEl.textContent =
+            'Unable to find that city. Please check spelling and try again.';
         errorEl.removeAttribute('class');
     }
 }
