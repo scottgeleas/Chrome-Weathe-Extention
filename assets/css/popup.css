@@ -99,6 +99,10 @@ p {
     justify-content: center;
 }
 
+#error {
+    margin-bottom: 5px;
+}
+
 footer {
     text-align: center;
 }

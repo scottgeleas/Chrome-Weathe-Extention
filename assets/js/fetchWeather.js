@@ -93,8 +93,8 @@ async function renderWeather(e) {
         feelsEl.textContent = `Feels Like: ${Math.round(weather.main.feels_like)}°F`;
     } catch (err) {
         console.log(err);
-        errorEl.textContent =
-            'Unable to find that city. Please check spelling and try again.';
+        errorEl.innerHTML =
+            'Unable to find that city.<br />Please check spelling and try again.';
         errorEl.removeAttribute('class');
     }
 }
