@@ -88,7 +88,7 @@ async function renderWeather(e) {
         descriptionEl.textContent = capitalize(weather.weather[0].description);
         tempEl.textContent = `Current Temperature: ${Math.round(weather.main.temp)}°F`;
         humidityEl.textContent = `Humidity: ${weather.main.humidity}%`;
-        windEl.textContent = `Wind Speed: ${weather.wind.speed}mph`;
+        windEl.textContent = `Wind Speed: ${Math.round(weather.wind.speed)}mph`;
         feelsEl.textContent = `Feels Like: ${Math.round(weather.main.feels_like)}°F`;
         console.log(weather);
     } catch (err) {
