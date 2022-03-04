@@ -8,9 +8,9 @@ const city = document.getElementById('city');
 const iconEl = document.getElementById('icon');
 const descriptionEl = document.getElementById('description');
 const tempEl = document.getElementById('temp');
-const maxEl = document.getElementById('max-temp');
-const minEl = document.getElementById('min-temp');
+const humidityEl = document.getElementById('humidity');
 const windEl = document.getElementById('wind');
+const feelsEl = document.getElementById('feels-like');
 
 // getCoords takes in the geocode URL from OpenWeatherAPI and returns the latitude and longitude of the given city and state
 async function getCoords(url) {
@@ -83,11 +83,14 @@ async function renderWeather(e) {
             'src',
             `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
         );
+
+        // humidity data seems inaccurate for my location but is accurate for other locations, humidity is more useful to add then min/max temp
         descriptionEl.textContent = capitalize(weather.weather[0].description);
         tempEl.textContent = `Current Temperature: ${weather.main.temp}°F`;
-        minEl.textContent = `Low: ${weather.main.temp_min}°F`;
-        maxEl.textContent = `High: ${weather.main.temp_max}°F`;
+        humidityEl.textContent = `Humidity: ${weather.main.humidity}%`;
         windEl.textContent = `Wind Speed: ${weather.wind.speed}mph`;
+        feelsEl.textContent = `Feels Like: ${weather.main.feels_like}°F`;
+        console.log(weather);
     } catch (err) {
         console.log(err);
         errorEl.textContent =
