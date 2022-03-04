@@ -43,7 +43,7 @@ const getStateCode = (state) => {
     return stateCodes[state];
 };
 
-//capitalize turns the first letter of each word to uppercase and returns the newly formatted string
+// capitalize turns the first letter of each word to uppercase and returns the newly formatted string
 function capitalize(description) {
     const words = description.split(' ');
     for (let i = 0; i < words.length; i++) {
@@ -73,16 +73,17 @@ async function renderWeather(e) {
 
         // if user's search fails and they try again this clears the errorEl before showing information
         errorEl.textContent = '';
-        //if successful clear inputs and show the information section
+        // if successful clear inputs and show the information section
         cityInput.value = '';
         stateInput.value = '';
         informationEl.removeAttribute('class');
 
-        //picking info off of the weather object and adding that text to the html
         iconEl.setAttribute(
             'src',
             `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
         );
+        // sets the alt attribute to the description of weather
+        iconEl.setAttribute('alt', weather.weather[0].description);
 
         // humidity data seems inaccurate for my location but is accurate for other locations, humidity is more useful to add then min/max temp
         descriptionEl.textContent = capitalize(weather.weather[0].description);
@@ -90,7 +91,6 @@ async function renderWeather(e) {
         humidityEl.textContent = `Humidity: ${weather.main.humidity}%`;
         windEl.textContent = `Wind Speed: ${Math.round(weather.wind.speed)}mph`;
         feelsEl.textContent = `Feels Like: ${Math.round(weather.main.feels_like)}°F`;
-        console.log(weather);
     } catch (err) {
         console.log(err);
         errorEl.textContent =
