@@ -64,7 +64,7 @@ button {
 
 button:hover {
     background-color: var(--dark-blue);
-    border: 2px solid black;
+    border: 2px solid var(--light-blue);
 }
 
 .hide {
@@ -87,7 +87,7 @@ button:hover {
 
 #information h2,
 p {
-    text-shadow: 1px 1px #000000;
+    text-shadow: 1.25px 1.5px #000000;
 }
 
 p {
