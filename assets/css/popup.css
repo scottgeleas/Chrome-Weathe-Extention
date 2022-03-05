@@ -17,6 +17,10 @@ header {
     margin-top: 20px;
 }
 
+h1 {
+    font-size: 24px;
+}
+
 h1,
 h2,
 h3 {
@@ -77,15 +81,19 @@ button:hover {
     color: rgb(255, 255, 255);
 }
 
+#information h2 {
+    font-size: 18px;
+}
+
 #information h2,
 p {
     text-shadow: 1px 1px #000000;
 }
 
 p {
-    font-size: larger;
+    font-size: 16px;
     text-align: center;
-    line-height: 50%;
+    line-height: 40%;
 }
 
 .location {
