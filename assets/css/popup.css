@@ -18,7 +18,7 @@ header {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 22px;
 }
 
 h1,
@@ -82,7 +82,7 @@ button:hover {
 }
 
 #information h2 {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #information h2,
@@ -91,7 +91,7 @@ p {
 }
 
 p {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     line-height: 40%;
 }
