@@ -38,7 +38,7 @@ This extension was built with:
 -   HTML5
 -   CSS3
 -   JavaScript
--   [Open Weather Map API](https://openweathermap.org/api)
+-   [Open Weather API](https://openweathermap.org/api)
 
 #### License
 
