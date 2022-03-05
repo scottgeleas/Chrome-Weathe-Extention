@@ -3,7 +3,6 @@ const form = document.querySelector('form');
 const cityInput = document.getElementById('city-input');
 const stateInput = document.getElementById('state-input');
 const informationEl = document.getElementById('information');
-const errorEl = document.getElementById('error');
 const city = document.getElementById('city');
 const iconEl = document.getElementById('icon');
 const descriptionEl = document.getElementById('description');
@@ -11,13 +10,14 @@ const tempEl = document.getElementById('temp');
 const humidityEl = document.getElementById('humidity');
 const windEl = document.getElementById('wind');
 const feelsEl = document.getElementById('feels-like');
+const errorEl = document.getElementById('error');
 
-// getCoords takes in the geocode URL from OpenWeatherAPI and returns the latitude and longitude of the given city and state
+// getCoords takes in the geocode URL and returns the latitude and longitude of the given city and state
 async function getCoords(url) {
     try {
         const response = await fetch(url);
         const location = await response.json();
-        city.textContent = `Current Weather for ${location[0].name}`;
+        city.textContent = `${location[0].name}, ${location[0].state}`;
         const lat = location[0].lat;
         const lon = location[0].lon;
         const coords = {
@@ -29,7 +29,8 @@ async function getCoords(url) {
         console.log(err);
     }
 }
-// getWeather takes in the current weather URL from OpenWeatherAPI and returns an object with weather data
+
+// getWeather takes in the weather URL and returns an object with weather data
 async function getWeather(url) {
     try {
         const response = await fetch(url);
@@ -39,6 +40,7 @@ async function getWeather(url) {
         console.log(err);
     }
 }
+
 const getStateCode = (state) => {
     return stateCodes[state];
 };
@@ -84,7 +86,6 @@ async function renderWeather(e) {
         );
         // sets the alt attribute to the description of weather
         iconEl.setAttribute('alt', weather.weather[0].description);
-
         // humidity data seems inaccurate for my location but is accurate for other locations, humidity is more useful to add then min/max temp
         descriptionEl.textContent = capitalize(weather.weather[0].description);
         tempEl.textContent = `Current Temperature: ${Math.round(weather.main.temp)}°F`;
