@@ -35,10 +35,10 @@ A simple extension for Chrome that allows users to view the current weather for 
 
 This extension was built with:
 
-- HTML5
-- CSS3
-- JavaScript
-- [Open Weather Map API](https://openweathermap.org/api)
+-   HTML5
+-   CSS3
+-   JavaScript
+-   [Open Weather Map API](https://openweathermap.org/api)
 
 #### License
 
