@@ -55,13 +55,13 @@ function capitalize(description) {
 }
 
 async function renderWeather(e) {
-    e.preventDefault();
     try {
+        e.preventDefault();
         // hide previous search information if searching again
         informationEl.setAttribute('class', 'hide');
 
         const cityName = cityInput.value.toLowerCase().trim();
-        // state turns whatever they typed in into a string with no uppercase and no spaces
+        // state turns whatever they typed in into a string with no uppercase and no spaces so getStateCode can work as intended
         const state = stateInput.value.toLowerCase().trim().split(' ').join('');
         const stateCode = getStateCode(state);
 
@@ -80,10 +80,7 @@ async function renderWeather(e) {
         stateInput.value = '';
         informationEl.removeAttribute('class');
 
-        iconEl.setAttribute(
-            'src',
-            `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
-        );
+        iconEl.setAttribute('src', `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`);
         // sets the alt attribute to the description of weather
         iconEl.setAttribute('alt', weather.weather[0].description);
         // humidity data seems inaccurate for my location but is accurate for other locations, humidity is more useful to add then min/max temp
