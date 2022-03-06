@@ -24,8 +24,8 @@ A simple extension for Chrome that allows users to view the current weather for 
 
 1. Clone the repository
 2. Navigate to the extensions page in Google Chrome
-3. In the top left enable Developer mode
-4. In the top right click "Load unpacked"
+3. In the top right enable Developer mode
+4. In the top left click "Load unpacked"
 5. Select the Chrome Weather Extension folder on your computer
 6. Click on the puzzle piece in the top right of Google Chrome
 7. Select the Simple Weather Extension
